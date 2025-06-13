@@ -201,12 +201,10 @@
   
   /* Navbar
       ============================= */
-  nav {
-  display: flex;
- }
-
+  
   .nav {
     margin: 0;
+    display: flex;
     padding: 0;
     list-style: none;
     text-align: center;
