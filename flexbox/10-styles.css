@@ -343,6 +343,8 @@
       ============================= */
   
   .section-hero {
+    position: relative;
+    margin-top: -8.5rem;
     background-position: 75% 0;
     background-repeat: no-repeat;
     background-size: 90rem auto;
@@ -362,10 +364,6 @@
   text-transform: uppercase;
 }
 
-  .section-hero {
-  position: relative;
-  margin-top: -8.5rem;
-}
 
   .section-hero .section-title {
     margin-bottom: 5rem;
