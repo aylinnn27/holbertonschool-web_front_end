@@ -374,12 +374,12 @@
   }
   
   /* Section Latest news ============================= */
-  .row .section-latest-news {
+  .section-latest-news .row {
     display: flex;
     flex-direction: row-reverse;
   }   
 /* Section SERVICES ============================= */
-   .row .section-services{
+   .section-services .row {
     flex-wrap: wrap;
    }
   /*** 4. CARD ***/
