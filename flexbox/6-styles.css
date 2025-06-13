@@ -62,8 +62,7 @@
     
     /** FOOTER **/
     --footer-padding: 5rem 0 1rem;
-    
-    /** NAVBAR **/
+  /** NAVBAR **/
     --nav-item-font-family: var(--font-family-headings);
     --nav-item-font-weight: var(--font-weight-bold);
     --nav-item-font-size: var(--font-size-medium);
@@ -202,26 +201,35 @@
   
   /* Navbar
       ============================= */
-  
+  nav {
+  display: flex;
+ }
 
   .nav {
-    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
   }
   
+  .nav .nav-item {
+    font-family: var(--nav-item-font-family);
+    font-weight: var(--nav-item-font-weight);
+    font-size: var(--nav-item-font-size);
+    letter-spacing: var(--nav-item-letter-spacing);
+    
+  }
+  .nav .nav-item + .nav-item {
+  margin: var(--nav-item-margin);
+ }
+
   
   .nav .nav-link {
+    display: block;
     padding: 0.5rem 0;
     position: relative;
   }
-
-  .nav .nav-item + .nav-item {
-    margin: 0 0 0 2rem;
- } 
-
+  
   .nav .nav-link:hover {
     color: var(--nav-item-link-hover);
     text-decoration: none;
