@@ -350,7 +350,9 @@ ul.row {
   padding: 10rem 40rem 2rem 0;
 }
 
-/* Required new styles for article hero layout */
+/*** ARTICLE PAGE ***/
+/* Section HERO (article)
+    ============================= */
 .hero-article {
   background-size: 150rem 100rem;
   background-position: 50% 0;
