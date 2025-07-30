@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Task 0</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script type="application/javascript">
+    function createFamilyTree() {
+      const table = $('<table>');
+      const thead = $('<thead>').append(
+        $('<tr>').append(
+          $('<th>').text('Firstname'),
+          $('<th>').text('Secondname'),
+          $('<th>') 
+        )
+      );
+      const tbody = $('<tbody>');
+
+      table.append(thead, tbody);
+      $('body').append(table);
+    }
+
+    function addNewMember(firstName, secondName, position = 'after') {
+      const row = $('<tr>');
+
+      row.append(
+        $('<td>').text(firstName),
+        $('<td>').text(secondName)
+      );
+
+      const deleteCell = $('<td>').text('(x)')
+        .css('cursor', 'pointer')
+        .css('background-color', 'orange')
+        .click(function () {
+          row.remove();
+        });
+
+      row.append(deleteCell);
+
+      const tbody = $('table').find('tbody');
+      if (position === 'before') {
+        tbody.prepend(row);
+      } else {
+        tbody.append(row);
+      }
+    }
+
+    function createForm() {
+      const firstnameinput = $('<input type="text">');
+      const secondnameinput = $('<input type="text">');
+      const select = $('<select>')
+        .append($('<option value="before">').text('Before'))
+        .append($('<option value="after">').text('After'));
+      const submitBtn = $('<input type="submit">');
+
+      const form = $('<form>').append(
+        firstnameinput,
+        secondnameinput,
+        select,
+        submitBtn
+      );
+
+      form.insertBefore('table');
+
+      form.submit(function (e) {
+        e.preventDefault();
+        const first = $('input[type="text"]:first').val();
+        const second = $('input[type="text"]:nth-of-type(2)').val();
+        const pos = $('select').val();
+        addNewMember(first, second, pos);
+      });
+    }
+
+    createFamilyTree();
+    createForm();
+
+  </script>
+</body>
+
+</html>
